@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const { ApolloServer } = require('apollo-server')
 const gql = require('graphql-tag') // installed with apollo-server npm package
 // there is no need to install express because it comes installed with apollo-server npm package

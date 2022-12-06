@@ -1,0 +1,30 @@
+{
+  "name": "ponder-social-media-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ishan-Wijesingha99/Ponder-Social-Media-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ishan-Wijesingha99/Ponder-Social-Media-App/issues"
+  },
+  "homepage": "https://github.com/Ishan-Wijesingha99/Ponder-Social-Media-App#readme",
+  "dependencies": {
+    "apollo-server": "^3.11.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

@@ -1,24 +1,48 @@
 const { model, Schema } = require('mongoose')
 
+
+
 const postSchema = new Schema({
-  body: String,
-  username: String,
-  createdAt: String,
+  body: {
+    type: String,
+    required: true
+  },
+  username: {
+    type: String,
+    required: true
+  },
+  createdAt: {
+    type: String,
+    required: true
+  },
   comments: [
     {
-      body: String,
-      username: String,
-      createdAt: String
+      body: {
+        type: String,
+        required: true
+      },
+      username: {
+        type: String,
+        required: true
+      },
+      createdAt: {
+        type: String,
+        required: true
+      }
     }
   ],
   likes: [
     {
-      username: String,
+      username: {
+        type: String,
+        required: true
+      },
       createdAt: String
     }
   ],
   user: {
     type: Schema.Types.ObjectId,
+    required: true,
     ref: 'users'
   }
 })

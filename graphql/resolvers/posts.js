@@ -41,6 +41,8 @@ const postsResolvers = {
       // an error will be thrown from checkAuth function if there is no user
       const user = checkAuth(context)
 
+      console.log(user)
+
       if (body.trim() === '') throw new Error('Post body must not be empty')
 
       // if you reach this line of code, the user is logged in, and therefore they can create a post

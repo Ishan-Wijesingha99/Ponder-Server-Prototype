@@ -1,19 +1,27 @@
-const { ApolloServer, PubSub } = require('apollo-server');
+const { ApolloServer } = require('apollo-server-express');
 const mongoose = require('mongoose');
+
+const express = require('express')
+
+const cors = require('cors')
 
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
 const { MONGODB } = require('./config.js');
 
-const pubsub = new PubSub();
 
 const PORT = process.env.port || 5000;
+
+const myApp = express()
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: ({ req }) => ({ req, pubsub })
 });
+
+server.applyMiddleware(cors())
+server.applyMiddleware({ app: myApp })
 
 mongoose
   .connect(MONGODB, { useNewUrlParser: true })

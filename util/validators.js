@@ -25,6 +25,7 @@ module.exports.validateRegisterInput = (username, email, password, confirmPasswo
     errors.confirmPassword = 'Passwords must match'
   }
 
+  // valid is a boolean, if there are no errors, this expression will be true
   return { errors, valid: Object.keys(errors).length < 1 }
 }
 

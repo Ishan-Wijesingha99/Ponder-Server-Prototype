@@ -41,6 +41,7 @@ const commentsResolvers = {
 
       const commentIndex = post.comments.findIndex((c) => c.id === commentId)
 
+      // only the creator of the comment can delete the comment, so check if the usernames match
       if (post.comments[commentIndex].username === username) {
         post.comments.splice(commentIndex, 1)
         await post.save()
